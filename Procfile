@@ -1,1 +1,1 @@
-web: pip install . -U && sunny_britain
+web: sh setup.sh && streamlit run app.py
