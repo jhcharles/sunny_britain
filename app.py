@@ -49,14 +49,17 @@ if uploaded_file is not None:
         time.sleep(0.1)
 
     # Putting the model to work
+    st.markdown("""## Unavailability forecast""")
+    st.markdown("""Applying the Sunny Britain predictive model""")
+
     model = joblib.load('LightGBM model.joblib')
     y_pred = (model.predict(X))[-7:]
 
     for i in range(0,7):
         if y_pred[i] == 0:
-            st.success(f""":battery: Day {i+1} - **No outage** expected""")
+            st.success(f""":battery: Up to day {(i+1)*3} - **No outage** expected""")
         else:
-            st.error(f""":skull_and_crossbones: Day {i+1} - **Outage** expected""")
+            st.error(f""":skull_and_crossbones: Up to day {(i+1)*3} - **Outage** expected""")
 
     ## Anomaly detection
     st.markdown("""## Anomaly monitoring""")
@@ -77,9 +80,6 @@ if uploaded_file is not None:
 
     col2.subheader('Irradiance')
     col2.line_chart(data_irr)
-
-    st.markdown("""## Unavailability forecast""")
-    st.markdown("""Applying the Sunny Britain predictive model""")
 
     ## API joke
 
