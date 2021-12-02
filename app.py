@@ -54,12 +54,18 @@ if uploaded_file is not None:
 
     model = joblib.load('LightGBM model.joblib')
     y_pred = (model.predict(X))[-7:]
+    y_pred_stat = (model.predict_proba(X))[-7:]
+    #st.markdown(y_pred_stat)
 
     for i in range(0,7):
         if y_pred[i] == 0:
-            st.success(f""":battery: Up to day {(i+1)*3} - **No outage** expected""")
+            st.success(
+                f""":battery: Up to day {(i+1)*3} - **No outage** expected. Likelihood: {round(y_pred_stat[i][0],3)}"""
+            )
         else:
-            st.error(f""":skull_and_crossbones: Up to day {(i+1)*3} - **Outage** expected""")
+            st.error(
+                f""":skull_and_crossbones: Up to day {(i+1)*3} - **Outage** expected. Likelihood: {round(y_pred_stat[i][1],3)}"""
+            )
 
     ## Anomaly detection
     st.markdown("""## Anomaly monitoring""")
