@@ -60,11 +60,11 @@ if uploaded_file is not None:
     for i in range(0,7):
         if y_pred[i] == 0:
             st.success(
-                f""":battery: Up to day {(i+1)*3} - **No outage** expected. Likelihood: {round(y_pred_stat[i][0],3)}"""
+                f""":battery: Up to day {(i+1)*3} - **No outage** expected"""
             )
         else:
             st.error(
-                f""":skull_and_crossbones: Up to day {(i+1)*3} - **Outage** expected. Likelihood: {round(y_pred_stat[i][1],3)}"""
+                f""":skull_and_crossbones: Up to day {(i+1)*3} - **Outage** expected"""
             )
 
     ## Anomaly detection
