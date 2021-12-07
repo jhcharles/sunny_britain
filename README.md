@@ -1,14 +1,16 @@
 # Team
 - John Henry Charles
 - Edison Yi
-- Alex
-# Data analysis
-- Document here the project: sunny_britain
-- Description: Project Description
-- Data Source:
-- Type of analysis:
+- Alexandre Schmitt
+- Seon Kim
 
-Please document the project the better you can.
+# Data analysis
+- Project Name: Sunny Britain
+- Description: This project aims to develop a predictive model that is able to alert solar power operators of imminent inverter failures. Our current best model is able to predict inverter failures in the upcoming week 57.4% of the time.
+- Data Source: LightSource BP
+- Type of analysis: Predictive Modelling
+
+
 
 # Startup the project
 
