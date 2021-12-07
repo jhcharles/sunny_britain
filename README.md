@@ -1,3 +1,7 @@
+# Team
+- John Henry Charles
+- Edison Yi
+- Alex
 # Data analysis
 - Document here the project: sunny_britain
 - Description: Project Description
